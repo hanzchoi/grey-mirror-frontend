@@ -10,7 +10,7 @@ const Logo = () => {
         style={{ height: 150, width: 150 }} >
 
         <div className="Tilt-inner pa3">
-          <img style={{}} src={mirror} alt='logo'/>
+          <img style={{paddingTop: '5px'}} src={mirror} alt='logo'/>
         </div>
       </Tilt>
     </div>
