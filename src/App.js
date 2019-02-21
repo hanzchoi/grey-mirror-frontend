@@ -9,12 +9,10 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 
-//const CLARIFAI_API_KEY =`${process.env.CLARIFAI_API_KEY}`
-console.log(CLARIFI_API_KEY)
 
-// const app = new Clarifai.App({
-//  apiKey: CLARIFAI_API_KEY
-// });
+const app = new Clarifai.App({
+ apiKey: CLARIFI_API_KEY
+});
 
 const particlesOption = {
   particles: {
@@ -41,24 +39,19 @@ class App extends Component {
   }
 
 
-
   onButtonSubmit = () => {
-    console.log('test');
-    console.log(process.env.REACT_APP_CLARIFAI_API_KEY);
-
-    // app.models
-    //   .predict(
-    //   Clarifai.COLOR_MODEL,
-    //       "https://samples.clarifai.com/metro-north.jpg"
-    //   )
-    //   .then(function(response) {
-    //       // do something with responseconsole.log(response);
-    //       console.log(response)
-    //       },
-    //       function(err) {// there was an error
-    //       }
-    //   );
-
+    app.models
+      .predict(
+      Clarifai.COLOR_MODEL,
+          "https://samples.clarifai.com/metro-north.jpg"
+      )
+      .then(function(response) {
+          // do something with responseconsole.log(response);
+          console.log(response)
+          },
+          function(err) {// there was an error
+          }
+      );
   }
 
   render() {
