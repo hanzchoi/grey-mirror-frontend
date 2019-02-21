@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Clarifai from 'clarifai';
+import CLARIFI_API_KEY from './credentials.js'
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
@@ -6,6 +8,13 @@ import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
+
+//const CLARIFAI_API_KEY =`${process.env.CLARIFAI_API_KEY}`
+console.log(CLARIFI_API_KEY)
+
+// const app = new Clarifai.App({
+//  apiKey: CLARIFAI_API_KEY
+// });
 
 const particlesOption = {
   particles: {
@@ -31,16 +40,25 @@ class App extends Component {
     console.log(event.target.value)
   }
 
+
+
   onButtonSubmit = () => {
     console.log('test');
-    app.models.predict("a403429f2ddf4b49b307e318f00e528b", "https://samples.clarifai.com/face-det.jpg").then(
-    function(response) {
-      // do something with response
-    },
-    function(err) {
-      // there was an error
-    }
-  );
+    console.log(process.env.REACT_APP_CLARIFAI_API_KEY);
+
+    // app.models
+    //   .predict(
+    //   Clarifai.COLOR_MODEL,
+    //       "https://samples.clarifai.com/metro-north.jpg"
+    //   )
+    //   .then(function(response) {
+    //       // do something with responseconsole.log(response);
+    //       console.log(response)
+    //       },
+    //       function(err) {// there was an error
+    //       }
+    //   );
+
   }
 
   render() {
