@@ -9,7 +9,6 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 
-
 const app = new Clarifai.App({
  apiKey: CLARIFI_API_KEY
 });
