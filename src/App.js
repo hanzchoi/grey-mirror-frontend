@@ -29,8 +29,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      input:'',
-      imageURL:''
+      input: '',
+      imageURL: '',
+      box: {}
     }
   }
 
@@ -38,7 +39,6 @@ class App extends Component {
     this.setState({input: event.target.value})
     // console.log()
   }
-
 
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input})
