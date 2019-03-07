@@ -35,7 +35,8 @@ class App extends Component {
     }
   }
   calculateFaceLocation = (data) => {
-
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById('inputImage');
   }
 
   onInputChange = (event) => {
@@ -52,7 +53,7 @@ class App extends Component {
       .then(response => this.calculateFaceLocation(response))
       .catch(error => console.log(error))
   }
-  //console.log(response.outputs[0].data.regions[0].region_info.bounding_box)
+
   render() {
     return (
       <div className="App">
