@@ -40,7 +40,6 @@ class App extends Component {
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    // console.log(width, height)
     //We will return an object that will set a value to the box state
     return{
       leftCol: clarifaiFace.left_col * width,
@@ -56,7 +55,6 @@ class App extends Component {
 
   onInputChange = (event) => {
     this.setState({input: event.target.value})
-    // console.log()
   }
 
   onButtonSubmit = () => {
