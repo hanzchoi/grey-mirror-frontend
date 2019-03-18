@@ -34,12 +34,24 @@ class App extends Component {
       box: {}
     }
   }
+
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width, height)
+    // console.log(width, height)
+    //We will return an object that will set a value to the box state
+    return{
+      leftCol: clarifaiFace.left_col * width,
+      rigthCol: width - (clarifaiFace.right_col * width),
+      topRow: clarifaiFace.top_row * height,
+      bottomRow: height - (clarifaiFace.bottom_row * height)
+    }
+  }
+
+  displayFaceBox = () => {
+
   }
 
   onInputChange = (event) => {
